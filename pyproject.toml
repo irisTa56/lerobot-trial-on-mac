@@ -1,0 +1,17 @@
+[project]
+name = "lerobot-trial-on-mac"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gym-aloha",
+    "jupyter>=1.1.1",
+    # `test` is added for pytest, on which `pi0` depends...
+    # https://github.com/huggingface/lerobot/blob/32fffd4bbbaf8f9a20e2f31cddae5102522ee1ae/lerobot/common/policies/pi0/paligemma_with_expert.py#L19
+    "lerobot[aloha,pi0,pusht,test]",
+]
+
+[tool.uv.sources]
+lerobot = { path = "./lerobot", editable = true }
+gym-aloha = { git = "https://github.com/irisTa56/gym-aloha.git" }
